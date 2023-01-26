@@ -1,6 +1,2 @@
 runtime: nodejs16
-
-handlers:
-- url: /youraccount/.*
-  secure: always
-  script: auto
+entrypoint: npm start

@@ -10,6 +10,12 @@ app.get("/testApp", (req, res) => {
   res.send("All Works Fine!");
 });
 
+
+// test api in order to check it works  
+app.get("/", (req, res) => {
+  res.send("App Workgin Fine!");
+});
+
 //--------------------------------------------------------------routes
 const AdminsRoutes = require('./src/Admins/routes');
 // const BlockedOfficesAccountsRoutes = require('./src/BlockedOfficesAccounts/routes');
