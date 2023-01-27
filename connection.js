@@ -10,11 +10,6 @@ const pool = new Pool({
     port: 10259,
     password: "P@ssw0rd",
     database: "TravbusDB"
-})
-
-pool.connect(function(err) {
-    if (err) throw err;
-    console.log("Good, Connected!");
-  });
+});
 
 module.exports = pool
