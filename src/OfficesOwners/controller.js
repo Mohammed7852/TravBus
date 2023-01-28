@@ -1,4 +1,3 @@
-
 const client = require('../../connection.js');
 client.connect();
 const queries=require('./queries');

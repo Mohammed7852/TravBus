@@ -1,6 +1,6 @@
 const addUserquery=`INSERT INTO users (name, phoneno, identityno, identity_image, birthdate, password) 
 VALUES ($1,$2,$3,$4,$5,PGP_SYM_ENCRYPT($6,'bus4'))`;
-const checkuserNameexistsquery=`SELECT * FROM users WHERE name =$1`;
+const checkuserNameExistsquery=`SELECT * FROM users WHERE name =$1`;
 const checkuserIdentitynoexistsquery=`SELECT * FROM users WHERE  identityno=$1`;
 const checkuserPasswordexistsquery=`SELECT user_id, name, phoneno, identityno, identity_image,
 TO_CHAR(birthdate::Date,'dd/mm/yyyy') AS birthdate,PGP_SYM_DECRYPT(password::bytea,'bus4') AS password 
@@ -14,7 +14,7 @@ module.exports={
 
     addUserquery,
     checkuserPasswordexistsquery,
-    checkuserNameexistsquery,
+    checkuserNameExistsquery,
     checkuserIdentitynoexistsquery,
     updateUserquery,
     deleteUserquery

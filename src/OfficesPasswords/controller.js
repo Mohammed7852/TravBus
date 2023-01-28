@@ -5,7 +5,7 @@ const queries=require('./queries');
 const addOffiePassword = (req,res)=>{
   const {password,office_name} = req.body;
   // check if password exists
-  client.query(queries.checkpasswordExistsquey,[password],(error,result)=>{
+  client.query(queries.checkoldpasswordExistsquey,[password,office_name],(error,result)=>{
     if(result.rows.length!=0){
       res.send("كلمة المرور هذة غير صالحة");
       

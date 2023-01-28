@@ -47,7 +47,7 @@ const updateUser=(req,res)=>{
   const id=parseInt(req.params.id);
   const {name,phoneno,identityno,identity_image,birthdate,password}=req.body;
   // check if name exists before 
-client.query(queries.checkuserNameexistsquery,[name],(error,result)=>{
+client.query(queries.checkuserNameExistsquery,[name],(error,result)=>{
   if(result.rows.length!=0){
         res.send(" الاسم موجود من قبل");
             }

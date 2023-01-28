@@ -50,7 +50,6 @@ else{
 }
 });
 };
-//----------------------------
 //---------------------------------------------get expired license
 const getExpiredLicenses=(req,res)=>{
   client.query(queries.checkLicenseExpiery,(error,result)=>{
