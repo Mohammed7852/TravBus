@@ -6,7 +6,7 @@ router.post("/",controller.addOfficeoOwner);
 router.get("/",controller.getOfficesOwners);
 router.get("/:office_name",controller.getOfficeOwnerByOfficeName);
 router.delete("/:office_name",controller.deleteOfficeOwner);
-router.put("/",controller.updateOfficeOwner);
+router.put("/:office_name",controller.updateOfficeOwner);
 
 
 module.exports = router;

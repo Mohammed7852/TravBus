@@ -7,7 +7,7 @@ const BlockOfficeAccount = (req,res)=>{
   const {office_name} = req.body;
   client.query(queries.addBlockOfficeAccountquery,[office_name],(error,result)=>{
   if(error) throw error;
-  res.status(201).send('تمت العملية بنجاح');
+  res.status(200).send('تمت العملية بنجاح');
   });
     };
 //------------------------------------------select all blocked offices accounts

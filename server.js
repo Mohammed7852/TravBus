@@ -1,10 +1,16 @@
 const express = require('express');
 const app = express();
 const port=8080;
-// const serverless=require('serverless-http')
 //MiddleWare
 // parse json
 app.use(express.json())
+app.use((_req, res, next) => {
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Headers', '*');
+  res.header('Access-Control-Allow-Methods', 'POST,GET,DELETE,PUT');
+  res.header('Access-Control-Allow-Credentials', '*');
+  next();
+});
 //--------------------------------------------------------------routes
 const AdminsRoutes = require('./src/Admins/routes');
 // const BlockedOfficesAccountsRoutes = require('./src/BlockedOfficesAccounts/routes');
@@ -31,4 +37,3 @@ app.use('/users',UsersRoutes);
 app.listen(port, () => {
   console.log(`Server is listening on port ${port}....`)
 })
-// module.exports.handler=serverless(app);

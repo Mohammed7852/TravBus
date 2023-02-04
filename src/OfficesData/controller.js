@@ -14,7 +14,7 @@ const addOffice = (req,res)=>{
     //add office to db
 client.query(queries.addOfficequery,[office_name,phoneno,bank_account,bank_name,location,logo_image,booking_policy],(error,result)=>{
   if(error) throw error;
-  res.status(201).send('تممت العملية بنجاح');
+  res.status(201).send('تمت العملية بنجاح');
   
 });
     }

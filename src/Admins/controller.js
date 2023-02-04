@@ -50,6 +50,15 @@ else{
 }
 });
 };
+//------------------------------------------------delete Admin
+const deleteAdmin=(req,res)=>{
+  const password=req.params.pass;
+client.query(queries.deleteAdminquery,[password],(error,result)=>{
+if(error) throw error;
+res.status(200).send("تم الحذف بنجاح ");
+});
+
+};
 //---------------------------------------------get expired license
 const getExpiredLicenses=(req,res)=>{
   client.query(queries.checkLicenseExpiery,(error,result)=>{
@@ -70,6 +79,7 @@ const getExpiredLicenses=(req,res)=>{
     addAdmin,
     getExpiredLicenses,
     authenticateAdmin,
+    deleteAdmin,
     updateAdmin,
     
 };

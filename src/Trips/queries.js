@@ -5,7 +5,7 @@ const getTripsquery=`SELECT t.trip_id,t.trip_day,t.departure_city,t.arrival_city
 t.departure_time,t.waiting_time,t.bus_type,t.ticket_price,t.status,
 t.office_name,od.logo_image
 FROM trips t , offices_data od WHERE t.office_name=od.office_name`;
-const getTripByIdquery=`SELECT t.trip_day,t.departure_city,t.arrival_city,t.attendance_time,
+const getTripByIdquery=`SELECT t.trip_id,t.trip_day,t.departure_city,t.arrival_city,t.attendance_time,
 t.departure_time,t.waiting_time,t.departure_station,t.arrival_station,t.ticket_price,
 t.office_name,od.booking_policy,od.bank_name,od.bank_account,od.location
 FROM trips t,offices_data od WHERE t.trip_id = $1 AND od.office_name=t.office_name`;

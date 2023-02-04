@@ -3,8 +3,8 @@ client.connect();
 const queries=require('./queries');
 //----------------------------------------------add a Booking order
 const addBookingOrder = (req,res)=>{
-const {trip_id,client_name,client_phoneno,client_identity_image,trip_date,booking_date,payment_type }=req.body; 
-client.query(queries.addBookingorderquery,[trip_id,client_name,client_phoneno,client_identity_image,trip_date,booking_date,payment_type],(error,result)=>{
+const {trip_id,client_name,client_phoneno,client_identity_image,trip_date,payment_type }=req.body; 
+client.query(queries.addBookingorderquery,[trip_id,client_name,client_phoneno,client_identity_image,trip_date,payment_type],(error,result)=>{
   if(error) throw error;
   res.status(201).send('تمت العملية بنجاح');
   
@@ -20,9 +20,9 @@ const getBookingOrders= (req, res)=>{
   
 };
 //-----------------------------------------------select booking order by client name
-const getBookingOrderByClientName=(req,res)=>{
-  const name=req.params.name;
-  client.query(queries.getBookingorderByClientNamequery,[name],(error,result)=>{
+const getBookingOrderByOrdernumber=(req,res)=>{
+  const orderno=req.params.id;
+  client.query(queries.getBookingorderByOrderno,[orderno],(error,result)=>{
     if(error) throw error;
     if(result.rows.length==0){
       res.send("غير موجود");
@@ -46,7 +46,7 @@ res.status(200).send("تم الحذف بنجاح");
 
     addBookingOrder,
     getBookingOrders,
-    getBookingOrderByClientName,
+    getBookingOrderByOrdernumber,
     deleteBookinOrder
       
   }

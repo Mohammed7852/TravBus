@@ -4,7 +4,7 @@ const controller=require('./controller');
 
 router.post("/",controller.addBookingOrder);
 router.get("/",controller.getBookingOrders);
-router.get("/:name",controller.getBookingOrderByClientName);
+router.get("/:id",controller.getBookingOrderByOrdernumber);
 router.delete("/:id",controller.deleteBookinOrder);
 
 
